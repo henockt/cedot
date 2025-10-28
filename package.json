@@ -1,0 +1,22 @@
+{
+  "name": "cedot",
+  "version": "0.0.1",
+  "description": "Collaborative code pad",
+  "private": true,
+  "homepage": "https://github.com/henockt/cedot#readme",
+  "bugs": {
+    "url": "https://github.com/henockt/cedot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henockt/cedot.git"
+  },
+  "license": "MIT",
+  "author": "henockt",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
