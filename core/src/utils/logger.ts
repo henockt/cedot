@@ -2,10 +2,10 @@ import winston from 'winston';
 
 const logLevels = {
   levels: {
-    error: 0,
-    warn: 1,
-    info: 2,
-    debug: 3,
+    debug: 0,
+    error: 1,
+    warn: 2,
+    info: 3,
   },
   colors: {
     error: 'red',

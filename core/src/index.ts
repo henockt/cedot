@@ -1,11 +1,10 @@
 import app from './app';
 import wss from './wss';
 import logger from './utils/logger';
+import config from './utils/config';
 
-const PORT = 3000;
-
-const server = app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
+const server = app.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`);
 });
 
 server.on('upgrade', (req, socket, head) => {
