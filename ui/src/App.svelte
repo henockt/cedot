@@ -1,7 +1,8 @@
 <script lang="ts">
-  import Editor from './lib/Editor.svelte';
+  import Router from 'svelte-spa-router';
+  import { routes } from './routes';
 </script>
 
 <main>
-  <Editor />
+  <Router {routes}/>
 </main>

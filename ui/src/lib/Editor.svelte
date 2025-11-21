@@ -9,6 +9,10 @@
   let editorContainer: HTMLDivElement;
   let view: EditorView;
 
+  export let params : { sessionId : string | undefined } = {
+    sessionId: undefined
+  };
+
   onMount(() => {
     const state = EditorState.create({
       doc: "// Start typing here...",
@@ -37,6 +41,7 @@
   });
 </script>
 
+<p>ID: {params.sessionId}</p>
 <div bind:this={editorContainer}></div>
 
 <style>
