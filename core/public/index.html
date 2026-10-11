@@ -36,15 +36,17 @@
     <body>
         <textarea placeholder="Enter your text here..."></textarea>
         <script>
-          const ws = new WebSocket(`ws://localhost:3000/${window.location.pathname.split('/')[1]}`);
+          const ws = new WebSocket(`ws://${window.location.host}/${window.location.pathname.split('/')[1]}`);
 
           ws.onopen = () => {
             console.log('WebSocket connected');
           };
 
           ws.onmessage = (event) => {
-            document.querySelector('textarea').value = event.data;
-            console.log('Received from server:', event.data);
+            const data = JSON.parse(event.data);
+            if (data.type === 'init' || data.type === 'text') {
+              document.querySelector('textarea').value = data.text;
+            }
           };
 
           ws.onerror = (error) => {
@@ -55,7 +57,7 @@
           textarea.addEventListener('input', () => {
             const content = textarea.value;
             if (ws.readyState === WebSocket.OPEN) {
-              ws.send(content);
+              ws.send(JSON.stringify({ type: 'text', text: content }));
             }
           });
         </script>
