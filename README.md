@@ -4,6 +4,10 @@
 
 A collaborative code pad. Open a pad, send the link, and edit together in real time.
 
+It's for anyone who needs to look at the same code with someone else, with no install or sign-up: pair programming, walking a teammate through a snippet, tutoring, or sharing code during a call. Running code from the pad and accounts for company technical interviews are planned; see the [roadmap](ROADMAP.md).
+
+Built with Node.js (Express + ws) on the backend and Svelte 5 + CodeMirror 6 on the frontend.
+
 ## Features
 
 - Live editing: everyone on a pad sees changes as they're typed
@@ -42,6 +46,8 @@ Open http://localhost:5173, click **new pad**, and open the same link in a secon
 The frontend talks to the backend at `/ws/<pad-id>` on its own origin, and the Vite dev server proxies that to `core`. This means only the frontend port needs to be reachable, which helps with port forwarding and tunnels.
 
 ### Configuration
+
+Copy `core/.env.example` to `core/.env` to change backend settings.
 
 | Variable | Where | Default | Purpose |
 |---|---|---|---|
